@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <title>Friends of Little Yus Solar Voter Chat</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  <script src="functions.js" type="text/javascript"></script>
+  <style>
+      .config {
+          width: 220px;
+          float: left;
+          margin: 0 20px 0 20px;
+
+        }
+
+        .config div, .config input {
+          border: 1px solid;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          width: 100%;
+          padding: 5px;
+          margin: 3px 0 10px 0;
+      }
+
+      /* .connect {
+          width: 220px;
+          float: left;
+          margin: 0 20px 0 20px;
+
+        }
+
+        .connect div, .connect input {
+          border: 1px solid;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          width: 100%;
+          padding: 5px;
+          margin: 3px 0 10px 0;
+      } */
+
+
+
+      .box {
+          width: 440px;
+          float: left;
+          margin: 0 20px 0 20px;
+      }
+
+      .box div, .box input {
+          border: 1px solid;
+          -moz-border-radius: 4px;
+          border-radius: 4px;
+          width: 100%;
+          padding: 5px;
+          margin: 3px 0 10px 0;
+      }
+
+      .box div {
+          border-color: grey;
+          height: 300px;
+          overflow: auto;
+      }
+
+      div code {
+          display: block;
+      }
+
+      #first div code {
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #eee;
+          margin-bottom: 5px;
+      }
+
+
+      #second div {
+          font-size: 0.8em;
+          display: none;          /* hide */
+          visibility: hidden;      /* hide */
+      }
+
+
+      #configuration div code {
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #eee;
+          margin-bottom: 5px;
+      }
+
+      #connection div code {
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #eee;
+          margin-bottom: 5px;
+      }
+
+  </style>
+  <link href="main.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body lang="en">
+    <h1>Friends of Little Yus Voter Chat</h1>
+
+
+    <div id="configuration" class="config">
+      <h2>Connection</h2>
+      <form>
+        <br>
+        <b>Solar Testnet Wallet Address</b>
+        <!-- <input id="username" type="text" name="username" value=""><br> -->
+        <input id="username" type="text" name="username" placeholder="Your wallet address"><br> 
+        <b>Chat Name</b>
+        <input id="chatname"  type="text" name="chatname" placeholder="Your chat name"><br>
+        <b>Sign this Message</b>
+        <div id="msg"></div>
+        <b>Signature</b>
+        <input id="password" type="text" name="password" placeholder="the message signature"><br>
+        <!-- <input id="password" type="text" name="password" value=""><br> -->
+        <input id= "connectButton" type="button" onclick="startConnect()" value="Connect" ><br>
+        <input id= "diconnectButton" type="button" onclick="startDisconnect()" value="Disconnect" ><br>
+
+      </form>
+    </div>
+
+    <!-- <div id="connection" class="connect">
+      <h2>Connect Buttons</h2>
+      <form>
+        <br>
+        <input type="button" onclick="startConnect()" value="Connect" ><br>
+        <input type="button" onclick="startDisconnect()" value="Disconnect" ><br>
+      </form>
+    </div> -->
+
+
+    <div id="first" class="box">
+      <h2>Received</h2>
+      <div></div>
+      <b>Message</b>
+      <form><input autocomplete="off" value="Type here..."></input></form>
+    </div>
+
+    <div id="second" class="box">
+      <!-- <h2>Logs</h2> -->
+      <div></div>
+    </div>
+
+  <script src="voterchat.js" type="text/javascript"></script>
+
+  </body>
+</html>
