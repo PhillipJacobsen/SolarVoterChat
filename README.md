@@ -1,5 +1,5 @@
 # VoterChat
-http://chat.littleyus.com/
+http://chat.littleyus.com/  
  To use this chat app you need the following things.
 1. ARK or Solar Devnet/testnet wallet.
 2. Vote for delegate friendsoflittleyus
