@@ -2,11 +2,19 @@
 <html>
   <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-  <title>Friends of Little Yus Solar Voter Chat</title>
+  <title>Friends of Little Yus Voter Chat</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <script src="functions.js" type="text/javascript"></script>
+  
   <style>
+
+      /*
+  execute the follow to clear nginx cache
+  https://stackoverflow.com/questions/6236078/how-to-clear-the-cache-of-nginx
+  curl http://chat.littleyus.com/ -s -I -H "secret-header:true"
+  */
+  
       .config {
           width: 220px;
           float: left;
@@ -71,6 +79,8 @@
           border-radius: 2px;
           border: 1px solid #eee;
           margin-bottom: 5px;
+          /* display: none;          */
+          /* visibility: hidden;     */
       }
 
 
@@ -107,15 +117,15 @@
       <form>
         <br>
         <b>Solar Testnet Wallet Address</b>
-        <!-- <input id="username" type="text" name="username" value=""><br> -->
-        <input id="username" type="text" name="username" placeholder="Your wallet address"><br> 
+        <input id="username" type="text" name="username" value="websocket"><br>
+        <!-- <input id="username" type="text" name="username" placeholder="Your wallet address"><br>  -->
         <b>Chat Name</b>
         <input id="chatname"  type="text" name="chatname" placeholder="Your chat name"><br>
         <b>Sign this Message</b>
         <div id="msg"></div>
         <b>Signature</b>
-        <input id="password" type="text" name="password" placeholder="the message signature"><br>
-        <!-- <input id="password" type="text" name="password" value=""><br> -->
+        <!-- <input id="password" type="text" name="password" placeholder="the message signature"><br> -->
+        <input id="password" type="text" name="password" value="websocketPW"><br>
         <input id= "connectButton" type="button" onclick="startConnect()" value="Connect" ><br>
         <input id= "diconnectButton" type="button" onclick="startDisconnect()" value="Disconnect" ><br>
 

@@ -10,6 +10,8 @@ function startConnect() {
     mqttPassword = document.getElementById("password").value; 
     chatName = document.getElementById("chatname").value; 
     
+    
+
     client = new Paho.MQTT.Client(wsbroker, wsport, "/ws",chatName+signedMessage);
 
     client.onConnectionLost = onConnectionLost;
@@ -64,7 +66,7 @@ function onConnectionLost (responseObject) {
     document.getElementById("connectButton").disabled = false;
     connected_flag=0;
 //   document.getElementById("first").innerHTML.clear;
- 
+
 // This totally deletes the display box
 //   const container = document.getElementById('first');
 //   container.replaceChildren();
@@ -78,11 +80,22 @@ function onConnectionLost (responseObject) {
 
 // use this if publishing on chat/username
 function onMessageArrived (message) {
+ //   document.getElementById("first").empty();
+//document.getElementById("first").textContent  = "";
+//$( "box" ).empty();
+//document.getElementsByClassName("box").innerHTML  = "";
+//document.getElementById("first").innerHTML = "hello man";
+//document.getElementById("msg").innerHTML = "hello man";
+//'#first'.append($("<code>").text("hello"));
+          //      div.scrollTop(div.scrollTop() + 10000);
+
+          //document.getElementById("first").innerHTML.clear;
+          //document.getElementById("first").innerHTML = "";
     debug("RECEIVE ON " + message.destinationName + " PAYLOAD " + message.payloadString);
-const topic = message.destinationName;
-const topicArray = topic.split("/");
+    const topic = message.destinationName;
+    const topicArray = topic.split("/");
     var wallet = topicArray[1];
-     var name = topicArray[2];
+    var name = topicArray[2];
     var shortenedWallet = wallet.slice(0,4) + ".." + wallet.slice(-4);
      displayReceivedData(name + ":" + shortenedWallet + ":  " + message.payloadString);    
     

@@ -41,7 +41,6 @@
         
         var displayReceivedData = pipe('#first');
 
-
         $('#first input').focus(function() {
             if (!has_had_focus) {
                 has_had_focus = true;
