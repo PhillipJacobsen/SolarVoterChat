@@ -1,4 +1,5 @@
 # VoterChat
+http://chat.nybl.ca/  
 http://chat.littleyus.com/  
  To use this chat app you need the following things.
 1. Solar testnet or ARK Devnet wallet.
